@@ -27,11 +27,22 @@
               }
             }
           })
+	.state('tab.poultry', {
+            url: '/poultry',
+            views: {
+              'poultry': {
+                templateUrl: 'poultry.html',
+                controller: 'poultryCtrl'
+              }
+            }
+          })
          $urlRouterProvider.otherwise('/tab/meats');
         })
         
         
         .controller('meatsCtrl', function($scope) {
+        }) 
+	.controller('poultryCtrl', function($scope) {
         })
          ;
 	</script>
@@ -48,6 +59,10 @@
           <ion-nav-view name="meats">
           </ion-nav-view>
         </ion-tab>
+        <ion-tab title="Poultry" href="#/tab/poultry">
+          <ion-nav-view name="poultry">
+          </ion-nav-view>
+        </ion-tab>
     </script>
  
     <script type="text/ng-template" id="meats.html">
@@ -57,7 +72,7 @@
          <img src="http://thumbnail.image.rakuten.co.jp/@0_mall/plusmagazine/cabinet/yakiniku/5103.jpg?_ex=330x330" height="100" width="100">
 	 <h2>Ground Beef</h2>
             <p>Category: Meats</p>
-	    <p> Per 100 grams Calories : 244 Fat : 14g Protein : 27g Carbohydrates : 0g</p>
+	    <p> Per 100 grams <b>Calories</b> : 244 <b>Fat</b> : 14g <b>Protein</b> : 27g <b>Carbohydrates</b> : 0g</p>
           </div>
 
                 <div class="item item-body">
@@ -72,7 +87,7 @@
           <div class="item item-avatar">
          <img src="http://t1.gstatic.com/images?q=tbn:ANd9GcQLAa_5Q0DmnfEj4OeJiC-L5Z3-XRG8VeZcd7Dec0DpZPZTH5Ktzg" height="100" width="100">	 <h2>Sirloin Steak</h2>
             <p>Category: Meats</p>
-	    <p> Per 100 grams Calories : 244 Fat : 14g Protein : 27g Carbohydrates : 0g</p>
+	    <p> Per 100 grams <b>Calories</b> : 244 <b>Fat</b> : 14g <b>Protein</b> : 27g <b>Carbohydrates</b> : 0g</p>
           </div>
 
                 <div class="item item-body">
@@ -86,7 +101,7 @@
          <img src="http://www.porkcdn.com/recipes/HR/Grilled_Pork_Chops_with_Basil-Garlic_Rub_HR.jpg"  height="100" width="100">
 	 <h2>Pork Chops</h2>
             <p>Category: Meats</p>
-	    <p> Per 100 grams Calories : 231 Fat : 14g Protein : 24g Carbohydrates : 0g</p>
+	    <p> Per 100 grams <b>Calories</b> : 231 <b>Fat</b> : 14g <b>Protein</b> : 24g <b>Carbohydrates</b> : 0g</p>
           </div>
 
                 <div class="item item-body">
@@ -98,5 +113,52 @@
 
       </ion-content>
     </script>
+  <script type="text/ng-template" id="poultry.html">
+      <ion-content>
+        <div class="list card">
+          <div class="item item-avatar">
+         <img src="http://www.stepaheadwellnesscenter.com/Portals/37996/images/Raw_Chicken_Breasts.jpg" height="100" width="100">
+	 <h2>Chicken Breast</h2>
+            <p>Category: Poultry</p>
+	    <p> Per 100 grams <b>Calories</b> : 116 <b>Fat</b> : 3.2g <b>Protein</b> : 21.8g <b>Carbohydrates</b> : 0g</p>
+          </div>
+
+                <div class="item item-body">
+            <img src="http://www.stepaheadwellnesscenter.com/Portals/37996/images/Raw_Chicken_Breasts.jpg" height="100" width="100" >
+ 
+            <p>The chicken breast is one of the most nutritious and best-tasting parts of the chicken. A chicken breast is full of protein while being low in carbohydrates and fat. Depending on the way it is cooked, chicken breast can also be low in calories while providing many of the vitamins and other nutrients you need every day.</p>
+            </div>
+    
+        <div class="list card">
+          <div class="item item-avatar">
+         <img src="http://www.inspiredtaste.net/wp-content/uploads/2012/11/Tequila-Lime-Turkey-Breast-Recipe-1.jpg" height="100" width="100">
+	 <h2>Turkey Breast</h2>
+            <p>Category: Poultry</p>
+	    <p> Per 100 grams <b>Calories</b> : 104 <b>Fat</b> : 1.66g <b>Protein</b> : 17g <b>Carbohydrates</b> : 4.2g</p>
+          </div>
+
+                <div class="item item-body">
+            <img src="http://www.inspiredtaste.net/wp-content/uploads/2012/11/Tequila-Lime-Turkey-Breast-Recipe-1.jpg" height="100" width="100" >
+ <p>A dieter's delight, turkey breasts are lean and virtually fat free. Their detractors would claim they have little flavour, but they make a healthy alternative to fattier meats.</p>
+            </div>
+
+	<div class="list card">
+          <div class="item item-avatar">
+         <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR_K2mW_Id3zob7bEfc6LnnLYGPEBm8Mb7DRH4abXZP0x2OkrlwbA"  height="100" width="100">
+	 <h2>Chicken Thighs</h2>
+            <p>Category: Poultry</p>
+	    <p> Per 100 grams <b>Calories</b> : 245 <b>Fat</b> : 15g <b>Protein</b> : 24.8g <b>Carbohydrates</b> : 0g</p>
+          </div>
+
+                <div class="item item-body">
+            <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR_K2mW_Id3zob7bEfc6LnnLYGPEBm8Mb7DRH4abXZP0x2OkrlwbA" height="100" width="100" >
+
+            <p>Because chicken thighs have skin and dark meat, they are often maligned as being unhealthy. Chicken breasts on the other hand, are composed of white meat and thought of as a healthier option. With the exception of one or two areas, breasts and thighs actually do not differ that much in nutrient content.</p>
+            </div>
+
+
+      </ion-content>
+    </script>
+
   </body>
 </html>
