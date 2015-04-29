@@ -1,4 +1,4 @@
-	<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -36,6 +36,16 @@
               }
             }
           })
+	.state('tab.grains', {
+            url: '/grains',
+            views: {
+              'grains': {
+               templateUrl: 'grains.html',
+               controller: 'grainsCtrl'
+             }
+            }
+          })
+	
          $urlRouterProvider.otherwise('/tab/meats');
         })
         
@@ -44,16 +54,18 @@
         }) 
 	.controller('poultryCtrl', function($scope) {
         })
+	.controller('grainsCtrl', function($scope) {
+        }) 
          ;
 	</script>
- 
-  </head>
-  <body ng-app="calorific">
+	</head>
+	  <body ng-app="calorific">
  
 	<ion-nav-view>
+ 
 	</ion-nav-view>
  
-    <script type="text/ng-template" id="tabs.html">
+    	 <script type="text/ng-template" id="tabs.html">
       <ion-tabs>
         <ion-tab title="Meats" href="#/tab/meats">
           <ion-nav-view name="meats">
@@ -63,7 +75,12 @@
           <ion-nav-view name="poultry">
           </ion-nav-view>
         </ion-tab>
-    </script>
+	<ion-tab title="Grains" href="#/tab/grains">
+          <ion-nav-view name="grains">
+          </ion-nav-view>
+        </ion-tab>
+    	</script>
+ 
  
     <script type="text/ng-template" id="meats.html">
       <ion-content>
@@ -109,10 +126,9 @@
 
             <p>A pork chop is a chop of pork cut perpendicularly to the spine of the pig and usually containing a rib or part of a vertebra, served as an individual portion.</p>
             </div>
-
-
       </ion-content>
     </script>
+
   <script type="text/ng-template" id="poultry.html">
       <ion-content>
         <div class="list card">
@@ -155,10 +171,70 @@
 
             <p>Because chicken thighs have skin and dark meat, they are often maligned as being unhealthy. Chicken breasts on the other hand, are composed of white meat and thought of as a healthier option. With the exception of one or two areas, breasts and thighs actually do not differ that much in nutrient content.</p>
             </div>
+      </ion-content>
+    </script>
+<script type="text/ng-template" id="grains.html">
+      <ion-content>
+        <div class="list card">
+          <div class="item item-avatar">
+         <img src="http://diretribune.com/wp-content/uploads/2014/12/pasta.jpg" height="100" width="100">
+   <h2>White Pasta</h2>
+            <p>Category: Grains</p>
+      <p> Per 100 grams <b>Calories</b> : 355 <b>Fat</b> : 1.5g <b>Protein</b> : 12g <b>Carbohydrates</b> : 72.2g</p>
+          </div>
+
+                <div class="item item-body">
+            <img src="http://diretribune.com/wp-content/uploads/2014/12/pasta.jpg" height="100" width="100" >
+ 
+            <p>Pasta is a staple food of traditional Italian cuisine, with the first reference dating to 1154 in Sicily. It is also commonly used to refer to the variety of pasta dishes.</p>
+            </div>
+    
+        <div class="list card">
+          <div class="item item-avatar">
+         <img src="http://waltspizza.com/sites/default/files/whole-wheat.jpg" height="100" width="100">
+   <h2>Brown Pasta</h2>
+            <p>Category: Grains</p>
+      <p> Per 100 grams <b>Calories</b> : 348 <b>Fat</b> : 1.4g <b>Protein</b> : 14.63g <b>Carbohydrates</b> : 75.03g</p>
+          </div>
+
+                <div class="item item-body">
+            <img src="http://waltspizza.com/sites/default/files/whole-wheat.jpg" height="100" width="100" >
+            <p>Whole-grain products are significantly higher in fiber and nutrients than their refined counterparts, but dried pasta made from a mixture of water and refined durum wheat, or semolina, is still the most widely consumed type of pasta in the United States. </p>
+            </div>
+
+        <div class="list card">
+          <div class="item item-avatar">
+         <img src="http://www.chowstixng.com/wp-content/uploads/2014/04/white-rice.jpg"  height="100" width="100">
+          <h2>White Rice</h2>
+            <p>Category: Grains</p>
+           <p> Per 100 grams <b>Calories</b> : 129 <b>Fat</b> : 0.28g <b>Protein</b> : 2.66g <b>Carbohydrates</b> : 27.9g</p>
+          </div>
+
+                <div class="item item-body">
+            <img src="http://www.chowstixng.com/wp-content/uploads/2014/04/white-rice.jpg" height="100" width="100" >
+
+            <p>White rice is the name given to milled rice that has had its husk, bran, and germ removed. This alters the flavour, texture and appearance of the rice and helps prevent spoilage and extend its storage life.</p>
+            </div>
+            
+
+             <div class="list card">
+          <div class="item item-avatar">
+         <img src="http://butterbeliever.com/wp-content/uploads/2012/03/brown-rice.jpg" height="100" width="100">
+         <h2>Brown Rice</h2>
+            <p>Category: Grains</p>
+           <p> Per 100 grams <b>Calories</b> : 110 <b>Fat</b> : 0.89g <b>Protein</b> : 2.56g <b>Carbohydrates</b> : 22.78g</p>
+          </div>
+
+                <div class="item item-body">
+            <img src="http://butterbeliever.com/wp-content/uploads/2012/03/brown-rice.jpg" height="100" width="100" >
+ 
+            <p>Brown rice is whole grain rice. It has a mild, nutty flavor, and is chewier and more nutritious than white rice, but goes rancid more quickly because the bran and germ—which are removed to make white rice—contain fats that can spoil.</p>
+            </div>
 
 
       </ion-content>
     </script>
 
-  </body>
+
+</body>
 </html>
