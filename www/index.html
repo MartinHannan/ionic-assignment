@@ -1,34 +1,102 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
-
+ 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-
-    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
-    <link href="css/ionic.app.css" rel="stylesheet">
-    -->
-
-    <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
-
-    <!-- cordova script (this will be a 404 during development) -->
-    <script src="cordova.js"></script>
-
-    <!-- your app's js -->
-    <script src="js/app.js"></script>
+	
+    <script type="text/javascript">
+		angular.module('calorific', ["ionic"])
+        
+        .config(function($stateProvider, $urlRouterProvider) {
+          $stateProvider
+          .state('tab', {
+            url: '/tab',
+            abstract: true,
+            templateUrl: "tabs.html"
+          })
+          .state('tab.meats', {
+            url: '/meats',
+            views: {
+              'meats': {
+                templateUrl: 'meats.html',
+                controller: 'meatsCtrl'
+              }
+            }
+          })
+         $urlRouterProvider.otherwise('/tab/meats');
+        })
+        
+        
+        .controller('meatsCtrl', function($scope) {
+        })
+         ;
+	</script>
+ 
   </head>
-  <body ng-app="Nutrional Information">
-
-    <ion-pane>
-      <ion-header-bar class="bar-stable">
-        <h1 class="title">Calorific</h1>
-      </ion-header-bar>
+  <body ng-app="calorific">
+ 
+	<ion-nav-view>
+	</ion-nav-view>
+ 
+    <script type="text/ng-template" id="tabs.html">
+      <ion-tabs>
+        <ion-tab title="Meats" href="#/tab/meats">
+          <ion-nav-view name="meats">
+          </ion-nav-view>
+        </ion-tab>
+    </script>
+ 
+    <script type="text/ng-template" id="meats.html">
       <ion-content>
+        <div class="list card">
+          <div class="item item-avatar">
+         <img src="http://thumbnail.image.rakuten.co.jp/@0_mall/plusmagazine/cabinet/yakiniku/5103.jpg?_ex=330x330" height="100" width="100">
+	 <h2>Ground Beef</h2>
+            <p>Category: Meats</p>
+	    <p> Per 100 grams Calories : 244 Fat : 14g Protein : 27g Carbohydrates : 0g</p>
+          </div>
+
+                <div class="item item-body">
+            <img src="http://thumbnail.image.rakuten.co.jp/@0_mall/plusmagazine/cabinet/yakiniku/5103.jpg?_ex=330x330" height="100" width="100" >
+ 
+            <p>
+		Ground beef, beef mince, minced meat, hamburger is a ground meat made of beef, finely chopped by a meat grinder. It is used in many recipes including hamburgers and cottage pie.
+            </p>
+            </div>
+    
+        <div class="list card">
+          <div class="item item-avatar">
+         <img src="http://t1.gstatic.com/images?q=tbn:ANd9GcQLAa_5Q0DmnfEj4OeJiC-L5Z3-XRG8VeZcd7Dec0DpZPZTH5Ktzg" height="100" width="100">	 <h2>Sirloin Steak</h2>
+            <p>Category: Meats</p>
+	    <p> Per 100 grams Calories : 244 Fat : 14g Protein : 27g Carbohydrates : 0g</p>
+          </div>
+
+                <div class="item item-body">
+            <img src="http://t1.gstatic.com/images?q=tbn:ANd9GcQLAa_5Q0DmnfEj4OeJiC-L5Z3-XRG8VeZcd7Dec0DpZPZTH5Ktzg" height="100" width="100" >
+ 
+            <p>The sirloin steak is a steak cut from the back of the animal. In U.S. butchery, the steak is cut from the rear back portion of the animal, continuing off the short loin from which T-bone, porterhouse, and club steaks are cut.</p>
+            </div>
+
+	<div class="list card">
+          <div class="item item-avatar">
+         <img src="http://www.porkcdn.com/recipes/HR/Grilled_Pork_Chops_with_Basil-Garlic_Rub_HR.jpg"  height="100" width="100">
+	 <h2>Pork Chops</h2>
+            <p>Category: Meats</p>
+	    <p> Per 100 grams Calories : 231 Fat : 14g Protein : 24g Carbohydrates : 0g</p>
+          </div>
+
+                <div class="item item-body">
+            <img src="http://www.porkcdn.com/recipes/HR/Grilled_Pork_Chops_with_Basil-Garlic_Rub_HR.jpg" height="100" width="100" >
+
+            <p>A pork chop is a chop of pork cut perpendicularly to the spine of the pig and usually containing a rib or part of a vertebra, served as an individual portion.</p>
+            </div>
+
+
       </ion-content>
-    </ion-pane>
+    </script>
   </body>
 </html>
